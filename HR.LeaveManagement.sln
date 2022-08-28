@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.LeaveManagement.Domain",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.LeaveManagement.Application", "HR.LeaveManagement.Application\HR.LeaveManagement.Application.csproj", "{B91E0C2E-4F9E-457E-8363-B6AD3077C774}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.LeaveManagement.Infrastructure", "HR.LeaveManagement.Infrastructure\HR.LeaveManagement.Infrastructure.csproj", "{15A91D45-AEC4-4AEE-B3BE-C3A30E637B53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{B91E0C2E-4F9E-457E-8363-B6AD3077C774}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B91E0C2E-4F9E-457E-8363-B6AD3077C774}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B91E0C2E-4F9E-457E-8363-B6AD3077C774}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15A91D45-AEC4-4AEE-B3BE-C3A30E637B53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15A91D45-AEC4-4AEE-B3BE-C3A30E637B53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15A91D45-AEC4-4AEE-B3BE-C3A30E637B53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15A91D45-AEC4-4AEE-B3BE-C3A30E637B53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
