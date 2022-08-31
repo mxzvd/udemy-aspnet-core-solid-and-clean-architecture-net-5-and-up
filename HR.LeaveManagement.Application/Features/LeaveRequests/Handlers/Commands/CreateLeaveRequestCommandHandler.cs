@@ -5,18 +5,22 @@ using HR.LeaveManagement.Application.Contracts.Persistence;
 using HR.LeaveManagement.Application.Responses;
 using HR.LeaveManagement.Domain;
 using MediatR;
+using HR.LeaveManagement.Application.Contracts.Infrastructure;
+using HR.LeaveManagement.Application.Models;
 
 namespace HR.LeaveManagement.Application.Features.LeaveRequests.Handlers.Commands;
 
 public class CreateLeaveRequestCommandHandler : IRequestHandler<CreateLeaveRequestCommand, BaseCommandResponse>
 {
     private readonly IMapper mapper;
+    private readonly IEmailSender emailSender;
     private readonly ILeaveRequestRepository leaveRequestRepository;
     private readonly ILeaveTypeRepository leaveTypeRepository;
     
-    public CreateLeaveRequestCommandHandler(IMapper mapper, ILeaveRequestRepository leaveRequestRepository, ILeaveTypeRepository leaveTypeRepository)
+    public CreateLeaveRequestCommandHandler(IMapper mapper, IEmailSender emailSender, ILeaveRequestRepository leaveRequestRepository, ILeaveTypeRepository leaveTypeRepository)
     {
         this.mapper = mapper;
+        this.emailSender = emailSender;
         this.leaveRequestRepository = leaveRequestRepository;
         this.leaveTypeRepository = leaveTypeRepository;
     }
@@ -42,6 +46,21 @@ public class CreateLeaveRequestCommandHandler : IRequestHandler<CreateLeaveReque
             response.Message = "Request Failed";
             response.Errors = validationResult.Errors.Select(q => q.ErrorMessage).ToList();
         }
+
+        var email = new Email
+        {
+            To = "employee@org.com",
+            Body = $"Your leave request for {request.CreateLeaveRequestDto.StartDate:D} to {request.CreateLeaveRequestDto.EndDate} has been submitted successfully.",
+            Subject = "Leave Request Submitted"
+        };
+        try
+        {
+            await emailSender.SendEmail(email);
+        }
+        catch (Exception)
+        {
+        }
+
         return response;
     }
 }
