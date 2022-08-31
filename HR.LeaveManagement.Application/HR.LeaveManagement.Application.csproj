@@ -7,7 +7,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HR.LeaveManagement.Persistence\HR.LeaveManagement.Persistence.csproj" />
+    <ProjectReference Include="..\HR.LeaveManagement.Domain\HR.LeaveManagement.Domain.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
