@@ -1,6 +1,5 @@
 ﻿using HR.LeaveManagement.MVC.Contracts;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
 
 namespace HR.LeaveManagement.MVC.Services.Base
 {

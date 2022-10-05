@@ -2,10 +2,6 @@
 using HR.LeaveManagement.MVC.Contracts;
 using HR.LeaveManagement.MVC.Models;
 using HR.LeaveManagement.MVC.Services.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace HR.LeaveManagement.MVC.Services
 {
@@ -70,7 +66,7 @@ namespace HR.LeaveManagement.MVC.Services
             throw new NotImplementedException();
         }
 
-        public async Task<AdminLeaveRequestViewVM> GetAdminLeaveRequestList()
+        public async Task<AdminLeaveRequestViewVM> GetAdminLevelRequestList()
         {
             AddBearerToken();
             var leaveRequests = await _client.LeaveRequestsAllAsync(isLoggedInUser: false);

@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+        "HR.LeaveManagement.MVC/bin": true,
+        "HR.LeaveManagement.MVC/obj": true,
+        "HR.LeaveManagement.Application.UnitTests/bin": true,
+        "HR.LeaveManagement.Application.UnitTests/obj": true
+    },
+    "workspace.isHidden": true
+}
